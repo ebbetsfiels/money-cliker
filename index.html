@@ -1,34 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/style.css">
-    <title>money-cliker</title>
-  </head>
-  <body class="bg-amber-200">
-    <h1 class=""></h1>
-    <script type="module" src="/src/main.js"></script>
-    
-    <button id="clicker">
-      <img class="w-sm" src="src/assets/pngtree-comic-style-money-bag-with-action-lines-png-image_15921055.png" alt="Money Bag">
-  </button>
 
-    <p id="display">
-      Score: 0
-  </p>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/style.css">
+  <title>money-cliker</title>
+</head>
 
-  </body>
+<body class="bg-amber-200">
+
+  <main class="flex">
+    <div class="flex-1 justify-center items-center flex flex-col">
+      <button id="clicker">
+        <img class="w-sm" src="src/assets/pngtree-comic-style-money-bag-with-action-lines-png-image_15921055.png"
+          alt="Money Bag">
+      </button>
+      <p id="display">
+        Score: 0
+      </p>
+    </div>
+    <div class="flex-1 justify-center items-center flex flex-col">
+      <h1>Store</h1>
+      <button id="upgradeOne">
+        Buy Money Upgrade - 50 taps
+        <p id="upgradeOneCount">0 Clickers</p>
+      </button>
+      <br><br>
+      <button id="upgradeTwo">
+        Buy Money Upgrade - 1500 taps
+        <p id="upgradeTwocount">0 creadit card</p>
+      </button>
+    </div>
+  </main>
+
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
-<h1>Store</h1>
-<button id="buyUpgrade">
-  Buy Money Upgrade - 50 taps
-</button>
-
-<br><br>
-
-<button id="creditCard">
-  1500$ creditCard
-</button>
-</div>
