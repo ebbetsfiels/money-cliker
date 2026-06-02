@@ -1,3 +1,24 @@
+import {Howl} from 'howler'
+
+
+import soundEffectOneSrc from './assets/efg.wav'
+import backgroundmusic from './assets/song.mp3'
+import soundEffectTwoSrc from './assets/ok.wav'
+
+const soundEffectOne = new Howl({
+    src: [soundEffectOneSrc],
+    volume: 0.5,
+})
+const soundEffectTwo = new Howl({
+    src: [soundEffectOneSrc],
+    volume: 0.3,
+})
+const backgroundMusic = new Howl({
+    src: [backgroundmusic],
+    volume: 0.3,
+    loop: true,
+    volume: 0.3,
+})
 // get our HTML into JavaScript
 let clicker = document.getElementById("clicker")
 
@@ -5,7 +26,7 @@ let display = document.getElementById("display")
 
 function upgradescore(ammount) {
     score += ammount
-    display.innerText = score + 'rpm'
+    display.innerText = score.toFixed(0) + '$'
 }
 
 let score = 0
@@ -13,7 +34,7 @@ let score = 0
 // When clicker button is pressed
 clicker.addEventListener("click", function () {
     let clickAmt = 1 + (clickers ** 1.05)
-
+     soundEffectOne.play()
     upgradescore(clickAmt)
 })
 
@@ -42,5 +63,15 @@ upgradeTwo.addEventListener("click", function () {
     } else {
         alert('YOU BROKE')
     }
-
+    soundEffectTwo.play()
+    upgradescore(clickAmt)
 })
+
+function gameloop() {
+    let clickAmt = 1 + (clickers ** 1.05)
+
+    upgradescore(clickAmt)
+
+   
+}
+setInterval(gameloop, 1000)
