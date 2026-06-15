@@ -45,7 +45,7 @@ upgradeOne.addEventListener("click", function () {
     if (score >= 100) {
         upgradescore(-100)
         clickers++
-        upgradeOneCount.innerText = clickers + "cylinders"
+        upgradeOneCount.innerText = clickers + "types of clickers"
     } else {
         alert('YOU BROKE')
     }
@@ -67,11 +67,55 @@ upgradeTwo.addEventListener("click", function () {
     upgradescore(clickAmt)
 })
 
+let upgradetree = document.getElementById("upgradetree")
+let upgradetreeCount = document.getElementById("upgradetreeCount")
+let Bank = 0
+
+upgradetree.addEventListener("click", function () {
+    if (score >= 150000) {
+        upgradescore(-150000)
+        Bank++
+        upgradeTreeCount.innerText = clickers + "bank"
+    } else {
+        alert('YOU BROKE')
+    }
+    soundEffectTree.play()
+    upgradescore(clickAmt)
+})
+
+let upgradefour = document.getElementById("upgradefour")
+let upgradefourCount = document.getElementById("upgradefourCount")
+let wallstreet = 0
+
+upgradefour.addEventListener("click", function () {
+    if (score >= 150000) {
+        upgradescore(-150000)
+        wallstreet++
+        upgradefourCount.innerText = clickers + "wall street"
+    } else {
+        alert('YOU BROKE')
+    }
+    soundEffectTree.play()
+    upgradescore(clickAmt)
+})
+
 function gameloop() {
     let clickAmt = 1 + (clickers ** 1.05)
 
+
     upgradescore(clickAmt)
 
-   
+    
+        
+    
+    if(Math.ramdom() < 0.01) {
+        //this block run about 10%of the time
+        if (score >= 50000) {
+            alert("You reached 50000! +100000 bonus!");
+            score += 100000;
+        }
+        
+    }
+
 }
 setInterval(gameloop, 1000)
