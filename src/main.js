@@ -108,12 +108,11 @@ function gameloop() {
     
         
     
-    if(Math.ramdom() < 0.01) {
+
         //this block run about 10%of the time
         if (score >= 50000) {
             alert("You reached 50000! +100000 bonus!");
             score += 100000;
-        }
         
     }
 
